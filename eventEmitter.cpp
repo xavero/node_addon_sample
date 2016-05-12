@@ -132,7 +132,7 @@ NAN_INLINE void callback_async_event (uv_work_t* req) {
 void emit_event() {
 	// we could use this struct to send some data from C to JS Land,
 	// but for now i will just let this empty
-	async_event_data *asyncdata = (async_event_data*) malloc(sizeof(async_event_data));
+	async_event_data *asyncdata = new async_event_data();
 	asyncdata->request.data = (void *) asyncdata;
 	
 	// here we schedule a function to be called on the main/node thread
