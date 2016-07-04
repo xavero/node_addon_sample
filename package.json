@@ -1,11 +1,14 @@
 {
-  "name": "ipcorp-softphone-wrapper",
+  "name": "node-addon-sample",
   "version": "1.0.0",
-  "description": "Softphone Wrapper for Ipcorp",
-  "author": "Ipcorp",
-  "homepage": "https://www.ipcorp.com.br",
+  "description": "node addon sample for async call",
+  "author": "Flavio Coelho",
+  "homepage": "https://github.com/xavero/node_addon_sample",
   "main": "main.js",
   "gypfile": true,
+  "scripts": {
+    "start": "node test.js"
+  },
   "dependencies": {
     "bindings": "^1.2.1",
     "nan": "^2.2.1"
