@@ -76,14 +76,13 @@ NAN_MODULE_INIT(MyObject::Init) {
 }
 
 NAN_METHOD(MyObject::New) {
-  if (info.IsConstructCall()) {
+  if (!info.IsConstructCall()) {
+    return Nan::ThrowError("`new` required");
+  }
+  
     MyObject* obj = new MyObject();
     obj->Wrap(info.This());
     info.GetReturnValue().Set(info.This());
-  } else {
-    v8::Local<v8::Function> cons = Nan::New<v8::Function>(constructor);
-    info.GetReturnValue().Set(cons->NewInstance());
-  }
 }
 
 NAN_METHOD(MyObject::CallEmit) {
